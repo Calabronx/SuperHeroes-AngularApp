@@ -58,16 +58,35 @@ export class HeroesService {
     console.log('servicio listo para usar!');
   }
 
-  getHeroes():Heroe[] {
+  getHeroes(): Heroe[] {
     return this.heroes;
+  }
+
+  getHeroe(idx: string) {
+    return this.heroes[idx];
+  }
+
+  buscarHeroe(termino: string): Heroe[] {
+    console.log('servicio  dato obtenido: ' + termino);
+    let heroesArr: Heroe[] = [];
+    termino = termino.toLocaleLowerCase();
+
+    for (let heroe of this.heroes) {
+      let nombre = heroe.nombre.toLocaleLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        heroesArr.push(heroe);
+        console.log('obtenido ' + nombre);
+      }
+    }
+
+    return heroesArr;
   }
 }
 
-   export interface Heroe {
-    nombre:string;
-    bio: string;
-    img: string;
-    aparicion: string;
-    casa: string;
-  }
-
+export interface Heroe {
+  nombre: string;
+  bio: string;
+  img: string;
+  aparicion: string;
+  casa: string;
+}

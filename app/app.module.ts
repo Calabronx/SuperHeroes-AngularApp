@@ -13,7 +13,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroeComponent } from './components/heroe/heroe.component';
 import { HeroesService } from './services/heroes.service';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, APP_ROUTING],
@@ -23,6 +25,8 @@ import { HeroesService } from './services/heroes.service';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
+    HeroeComponent,
+    SearchbarComponent,
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent],
