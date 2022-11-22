@@ -16,6 +16,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { HeroesService } from './services/heroes.service';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, APP_ROUTING],
@@ -27,6 +28,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     HeroesComponent,
     HeroeComponent,
     SearchbarComponent,
+    HeroeTarjetaComponent,
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent],

@@ -14,20 +14,18 @@ export class SearchbarComponent implements OnInit {
     private _heroesService: HeroesService,
     private router: Router,
     private _activatedRoute: ActivatedRoute
-  ) {
-    {
-      this._activatedRoute.params.subscribe((params) => {
-        console.log(params['name'] + ' running debug');
-
-        this.heroes = this._heroesService.buscarHeroe(params['termino']);
-        console.log(this.heroes);
-      });
-    }
-  }
+  ) {}
 
   verHeroe(name: string) {
     this.router.navigate(['/search:', name]);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._activatedRoute.params.subscribe((params) => {
+      console.log(params['name'] + ' running debug');
+
+      this.heroes = this._heroesService.buscarHeroe(params['termino']);
+      console.log(this.heroes);
+    });
+  }
 }

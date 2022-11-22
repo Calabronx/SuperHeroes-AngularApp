@@ -1,25 +1,8 @@
 <h1>Heroes <small>Marvel y DC</small></h1>
 <hr />
-<div class="card-group">
-  <div class="card" *ngFor="let heroe of heroes; let i = index">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text">
-        {{ heroe.bio }}
-      </p>
-      <p class="card-text">
-        <small class="text-muted">{{ heroe.aparicion }}</small>
-        <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"
-          >Ver mas Link...</a
-        >
-        <button
-          (click)="verHeroe(i)"
-          type="button"
-          class="btn btn-outline-primary btn-block"
-        ></button>
-      </p>
-    </div>
-  </div>
-</div>
-<br />
+<app-heroe-tarjeta
+  (heroeSeleccionado)="verHeroe($event)"
+  [heroe]="heroe"
+  [index]="i"
+  *ngFor="let heroe of heroes; let i = index"
+></app-heroe-tarjeta>
